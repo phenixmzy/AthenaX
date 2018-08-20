@@ -1,0 +1,15 @@
+athenax.master.uri: http://10.21.5.1:8083
+catalog.impl: com.uber.athenax.vm.api.tables.simple.SimpleAthenaxTableCatalogProvider
+clusters:
+  foo:
+    yarn.site.location: hdfs://vivoai/athenax/yarn-site.xml
+    athenax.home.dir: hdfs://vivoai/athenax/tmp
+    flink.uber.jar.location: hdfs://vivoai/app/athenax/athenax-vm-connector-kafka-0.2-SNAPSHOT.jar
+    localize.resources:
+      - hdfs://vivoai/athenax/log4j.properties
+    additional.jars:
+      - hdfs://vivoai/athenax/athenax-vm-connector-kafka-0.2-SNAPSHOT.jar
+
+extras:
+  instancemanager.rescan.interval: 5000
+  jobstore.leveldb.file: /root/AthenaX/athenax-backend/target/db
